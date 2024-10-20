@@ -1,0 +1,19 @@
+footer.l-footer.p-footer
+    .l-container.p-footer__container
+        nav.p-footer__nav.p-footer-nav
+            ul.p-footer-nav__items
+                each page in localConf
+                    if page.title !== "home"
+                        li: a(href=page.slug)= page.title
+        p.p-footer__copyright
+            | &copy;&nbsp;2020&nbsp;-
+            script(type="text/javascript" language="JavaScript")
+                | current = new Date();
+                | document.write(current.getFullYear() + '&nbsp;')
+            = globalConf.title
+
+button.l-button-to-top.c-button-to-top.js-button-to-top
+
+// JavaScript 
+script(src="/js/bundle.js")
+script(src="/js/hoge.js") 

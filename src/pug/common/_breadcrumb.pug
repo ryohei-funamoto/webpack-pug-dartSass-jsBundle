@@ -1,0 +1,9 @@
+.l-breadcrumb.p-breadcrumb
+    each item, index in config.breadcrumb
+        - let path = item.path
+        - let label = item.label
+        if path === ""
+            span: span.current-item= label
+        else
+            span: a(href=path)= label
+            | &nbsp;&gt;&nbsp;

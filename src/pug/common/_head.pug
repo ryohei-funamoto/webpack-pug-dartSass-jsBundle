@@ -1,0 +1,27 @@
+- let title = config.title === "home" ? globalConf.title : `${config.title} | ${globalConf.title}`;
+head(prefix=`og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# ${config.og_type}: http://ogp.me/ns/${config.og_type}#`)
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="format-detection" content="telephone=no")
+    title=title
+    // SEO 
+    meta(name="description" content=config.description)
+    // OGP 
+    meta(property="og:url" content=globalConf.site_url + config.slug)
+    meta(property="og:type" content=config.og_type)
+    meta(property="og:title" content=title)
+    meta(property="og:description" content=config.description)
+    meta(property="og:site_name" content=globalConf.title)
+    // meta(property="og:image" content=config.og_image)
+    meta(name="twitter:card" content="summary or summary_large_image")
+    meta(name="twitter:site" content="@ユーザー名")
+    // タッチアイコン 
+    // link(rel="apple-touch-icon" sizes="192x192" href="")
+    // link(rel="shortcut icon" sizes="192x192" href="")
+    // ファビコン 
+    // link(rel="icon" href="")
+    // クローラー 
+    meta(name="robots" content="noindex, nofollow")
+    // CSS 
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet", href="/css/hoge.css")

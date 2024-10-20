@@ -1,0 +1,16 @@
+- let isHome = config.title === "home";
+header(class=isHome ? "l-header p-header" : "l-header p-header p-header--sub")
+    .l-container.p-header__container
+        .p-header__inner
+            if isHome
+                h1.p-header__logo.c-logo= globalConf.title
+            else
+                p.p-header__logo.c-logo: a(href=globalConf.site_url)= globalConf.title
+            nav.p-header__nav.p-gnav
+                ul.p-gnav__items
+                    each page in localConf
+                        if page.title !== "home"
+                            if page.title === config.title
+                                li.is-current= page.title
+                            else
+                                li: a(href=page.slug)= page.title

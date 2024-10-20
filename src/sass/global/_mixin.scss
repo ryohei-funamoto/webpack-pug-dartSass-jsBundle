@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+
+// animation関連のプロパティを一括指定
+@mixin animation($name, $duration: 1s, $timing-function: ease, $delay: 0s, $iteration-count: 1, $direction: normal, $fill-mode: forwards) {
+    animation: {
+        name: $name;
+        duration: $duration;
+        timing-function: $timing-function;
+        delay: $delay;
+        iteration-count: $iteration-count;
+        direction: $direction;
+        fill-mode: $fill-mode;
+    }
+}
+
+// background関連のプロパティを一括指定
+@mixin background($color: transparent, $image, $position: center center, $repeat: no-repeat, $size) {
+    background: {
+        color: $color;
+        image: $image;
+        position: $position;
+        repeat: $repeat;
+        size: $size;
+    }
+}
+
+// letter-spacingの算出
+@mixin letterSpacing($av) {
+    letter-spacing: math.div($av, 1000) * 1em;
+}
+
+// line-heightの算出
+@mixin lineHeight($font-size, $height) {
+    line-height: math.div($height, $font-size);
+}
+
+// line-heightの使用により生じるハーフ・レディングを消す
+// https://moshashugyo.com/media/line-height-space
+@mixin lineHeightSpaceFill($font-size, $height) {
+    $line-height: math.div($height, $font-size);
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+    }
+
+    &::before {
+        margin-top: calc((1 - #{$line-height}) * 0.5em);
+    }
+
+    &::after {
+        margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+    }
+}
+
+// メディアクエリ
+@mixin mq($breakpoint: md) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// アスペクト比の算出
+@mixin paddingTopHack($side, $height) {
+    padding-top: math.div($height, $side) * 100%;
+}
+
+// text-indentの算出
+@mixin textIndent($av) {
+    text-indent: math.div($av, 1000) * 1em;
+}

@@ -1,0 +1,15 @@
+extends ../common/_layout
+
+block config
+    - let config = localConf[pathInfo.html];
+
+block content
+    .l-contact
+        main
+            .l-container
+                include ../common/_breadcrumb
+                h2
+                    | お問い合わせページです。
+                    i.fa-regular.fa-star
+                .test テスト
+                .hoge

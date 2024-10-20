@@ -1,0 +1,14 @@
+extends ./common/_layout
+
+block config
+    - let config = localConf[pathInfo.html];
+
+block content
+    .l-home
+        main
+            .l-container
+                h2
+                    | トップページです。
+                    i.fa-solid.fa-sun
+                .test テスト
+                .hoge

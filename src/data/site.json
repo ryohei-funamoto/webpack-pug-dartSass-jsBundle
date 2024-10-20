@@ -1,0 +1,61 @@
+{
+    "global": {
+        "title": "Pug Demo",
+        "site_url": "https://pug-demo.com"
+    },
+    "local": {
+        "index.html": {
+            "title": "home",
+            "slug": "/",
+            "description": "Home description",
+            "keywords": "Home keywords",
+            "og_url": "Home og_url",
+            "og_type": "website",
+            "og_title": "Home og_title",
+            "og_image": "Home og_image",
+            "og_description": "Home og_description"
+        },
+        "blog/index.html": {
+            "title": "blog",
+            "slug": "/blog/",
+            "description": "Blog description",
+            "keywords": "Blog keywords",
+            "og_url": "Blog og_url",
+            "og_type": "article",
+            "og_title": "Blog og_title",
+            "og_image": "Blog og_image",
+            "og_description": "Blog og_description",
+            "breadcrumb": [
+                {
+                    "path": "/",
+                    "label": "home"
+                },
+                {
+                    "path": "",
+                    "label": "blog"
+                }
+            ]
+        },
+        "contact/index.html": {
+            "title": "contact",
+            "slug": "/contact/",
+            "description": "Contact description",
+            "keywords": "Contact keywords",
+            "og_url": "Contact og_url",
+            "og_type": "article",
+            "og_title": "Contact og_title",
+            "og_image": "Contact og_image",
+            "og_description": "Contact og_description",
+            "breadcrumb": [
+                {
+                    "path": "/",
+                    "label": "home"
+                },
+                {
+                    "path": "",
+                    "label": "contact"
+                }
+            ]
+        }
+    }
+}
