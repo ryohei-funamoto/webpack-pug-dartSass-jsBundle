@@ -45,7 +45,8 @@
 
 ## Pug
 - 共通パーツ(`_layout.put`, `_head.pug`, `_header.pug`, `_footer.pug`, `_breadcrumb.pug`)は、src/pug/common内で管理しています。
-- `_head.pug`, `_header.pug`, `_footer.pug`, `_breadcrumb.pug`は、`_layout.pug`で読み込んでおりますので、各ページ用のファイルで都度読み込む必要はございません。
+- `_head.pug`, `_header.pug`, `_footer.pug`は`_layout.pug`で読み込んでおりますので、各ページ用のPugファイルで都度読み込む必要はございません。
+- パンくずリストのパーツである`_breadcrumb.pug`は下層ページで使用することを想定しておりますので、pug/index.pug以外の各ページ用のPugファイルで都度読み込んでください。
 - 各ページ用のファイルの冒頭で変数`config`を宣言してください(書き方はsrc/pug内の`index.pug`, `blog/index.pug`, `contact/index.pug`を参照してください)。
 - サイトのメタ情報はsrc/data内の`site.json`で管理しています。
 
