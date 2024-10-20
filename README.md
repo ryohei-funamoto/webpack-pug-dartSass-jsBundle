@@ -1,4 +1,4 @@
-# webpack-pug-sass
+# webpack-pug-dartSass-jsBundle
 - こちらは静的サイト用Pug, DartSass対応のwebpackです。
 
 ## 出力コマンド
